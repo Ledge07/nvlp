@@ -8,9 +8,9 @@ const TransactionSchema = new Schema(
     amount: { type: Integer, required: true },
     date_posted: { type: Date, required: true },
     type: { type: String, required: true },
-    transaction_id: { type: String, required: true },
-    account: [{ type: Schema.Types.ObjectId, ref: 'Account' }],
-    category: [{ type: Schema.Types.ObjectId, ref: 'Category' }]
+    transaction_id: { type: String, unique: true, required: true },
+    account: [{ type: Schema.Types.ObjectId, ref: 'Account', required: true}],
+    category: [{ type: Schema.Types.ObjectId, ref: 'Category'}]
   }
 );
 

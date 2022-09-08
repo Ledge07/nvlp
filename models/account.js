@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const AccountSchema = new Schema(
   {
-    name: {type: String, required: true, maxLength: 100},
+    name: {type: String, required: true, unique:true, maxLength: 100},
     org: {type: String, required: true, maxLength: 100},
     account_id: {type: String, required: false, maxLength: 100},
   }
